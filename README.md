@@ -1,75 +1,42 @@
-# ZenFlow Dashboard
+🚀 ZenFlow Dashboard
 
-A personal focus and productivity dashboard, designed to create a tranquil digital environment to help you achieve "deep work". Built with React and Vite, ZenFlow runs 100% in your browser and requires no backend or API keys.
+Bem-vindo ao ZenFlow Dashboard, uma aplicação web de página única (SPA) projetada para criar um santuário digital de foco e produtividade. Esta ferramenta ajuda os usuários a se concentrarem em suas tarefas através de um ambiente personalizável e ferramentas de produtividade integradas.
 
-## ✨ Key Features
+**➡️ [Acesse o site ao vivo aqui!](https://vipato.github.io/zenflow-dashboard/)**
 
-- **Pomodoro Timer:** Easily switch between **Focus**, **Short Break**, and **Long Break** modes with customizable durations.
-- **Smart Focus List:** Create your to-do list for the current focus session.
-- **"AI" Suggestions:** Get simulated task suggestions for your main goal. This feature is **simulated locally** to work without an API key.
-- **Brain Dump:** A handy notepad to quickly jot down distracting thoughts and ideas, which can be formatted into a clean list with one click.
-- **Personalization & Persistence:** The app greets you by name, supports multiple languages (Português 🇧🇷 & English 🇬🇧), and saves all your tasks, settings, and session history in your browser.
-- **Session History:** Review your completed focus sessions.
-- **Responsive Design:** A clean, modern, and distraction-free UI that works on both desktop and mobile.
 
-## 🚀 Technologies Used
 
-This project uses a modern, build-tool-based approach for web development.
+✨ Funcionalidades Atuais
 
-- **Build Tool:** **Vite** - A blazing-fast frontend tool that provides a rapid development experience and bundles the code for production.
-- **Framework:** **React** (`v19`) - For building the reactive, component-based user interface.
-- **Language:** **TypeScript** - For static typing, making the code more robust and easier to maintain.
-- **Styling:** **Tailwind CSS** - A utility-first CSS framework for rapidly building modern designs. The final CSS is optimized and purged of unused styles during the build process.
-- **Icons:** **Lucide React** - A lightweight and customizable SVG icon library.
-- **Local Storage:** The browser's `localStorage` is used to persist user data (name, settings, tasks, history, and language) across sessions.
+*   Timer Pomodoro Personalizável:** Um timer de foco visual que alterna entre períodos de trabalho e descanso, com durações que podem ser definidas pelo usuário.
+*   Lista de Foco da Sessão:** Uma lista de tarefas volátil para que o usuário possa definir metas para a sessão de foco atual.
+*   Bloco de Notas "Brain Dump" com Organização Simulada:** Um espaço para anotações rápidas que salva o conteúdo no `localStorage`. Inclui uma função "Organizar" que, no momento, utiliza respostas predefinidas para simular a organização do texto por uma IA, demonstrando a funcionalidade da UI sem a necessidade de uma chave de API.
+*   Histórico de Sessões: O aplicativo registra cada ciclo de Pomodoro concluído, permitindo que o usuário visualize seu progresso.
+*   Internacionalização (i18n): Suporte completo para os idiomas Português e Inglês, com um seletor de fácil acesso.
+*   Atalhos de Teclado: Controles rápidos (`Espaço` para Iniciar/Pausar, `R` para Resetar) para uma experiência de usuário mais fluida.
 
-## ⚙️ Development Setup
+ 🛠️ Tecnologias e Arquitetura
 
-**Prerequisites:** You need to have [Node.js](https://nodejs.org/) (which includes `npm`) installed on your machine.
+Este projeto foi construído do zero com foco em tecnologias web modernas e boas práticas de desenvolvimento front-end.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
-    cd YOUR-REPO-NAME
-    ```
+*   Framework Front-End: React com TypeScript para um desenvolvimento robusto, tipado e escalável.
+*   Build Tool: Vite para um ambiente de desenvolvimento extremamente rápido e um processo de build otimizado para produção.
+*   Estilização: TailwindCSS para uma prototipagem rápida e um sistema de design baseado em utilitários, garantindo consistência visual.
+*   Gerenciamento de Estado: Combinação de useState, useContext (para o estado de internacionalização) e localStorage para persistir as preferências do usuário e os dados da aplicação.
+*   Responsividade: O design é totalmente responsivo, adaptando-se a telas de desktop, tablets e dispositivos móveis usando as diretrizes do TailwindCSS.
 
-2.  **Install dependencies:**
-    This command reads the `package.json` file and installs all the necessary libraries (React, Vite, etc.).
-    ```bash
-    npm install
-    ```
+ ⚙️ Deploy e Automação (CI/CD)
 
-3.  **Run the development server:**
-    This will start a local development server with Hot-Module-Replacement (HMR), meaning your browser will automatically update as you make changes to the code.
-    ```bash
-    npm run dev
-    ```
-    Open your browser and navigate to the URL provided in the terminal (usually `http://localhost:5173`).
+A aplicação é implantada automaticamente no **GitHub Pages**, demonstrando um pipeline de CI/CD (Continuous Integration/Continuous Deployment) simples e eficaz.
 
-## ☁️ How to Deploy to GitHub Pages
+*   Build: O comando `npm run build` utiliza o Vite para compilar o código React/TypeScript em arquivos estáticos otimizados (HTML, CSS, JS).
+*   Deploy: O pacote `gh-pages` é utilizado para automatizar o processo de envio da pasta de build (`dist`) para uma branch `gh-pages` dedicada no repositório.
+*   Fluxo: Qualquer nova alteração enviada para a branch `main` pode ser rapidamente implantada no site ao vivo executando um único comando: `npm run deploy`.
 
-1.  **Build the project:**
-    Run the build script. This command uses Vite to compile and bundle all your code into a `dist` folder, which contains the optimized, static files ready for production.
-    ```bash
-    npm run build
-    ```
+  roadmap do Projeto (Planos Futuros)
 
-2.  **Commit and Push:**
-    Commit all your changes, including the newly created `dist` folder.
-    ```bash
-    git add .
-    git commit -m "Build project for deployment"
-    git push
-    ```
+Este projeto foi projetado com a escalabilidade em mente. Os próximos passos planejados incluem:
 
-3.  **Configure GitHub Pages:**
-    -   In your GitHub repository, go to the **Settings** tab.
-    -   In the left sidebar, click on **Pages**.
-    -   Under "Build and deployment", for the **Source**, select **"Deploy from a branch"**.
-    -   For the **Branch**, choose your main branch (e.g., `main`) and select the **`/dist`** folder from the dropdown.
-    -   Click **Save**.
-
-4.  **Wait and Visit:**
-    Wait a few minutes for GitHub to deploy your site. You will see the live URL on the same page. It will look like: `https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/`.
-
-Your ZenFlow Dashboard is now live and accessible to everyone!
+*   Integração com IA Real: Substituir a organização de texto simulada por uma integração real com a API do Gemini ou outra LLM.
+*   Player de Música Integrado: Adicionar um widget de player de música com uma seleção de faixas Lo-fi para aprimorar o ambiente de foco.
+*   Autenticação de Usuário: Implementar um sistema de login (via Firebase Auth) para permitir que os usuários salvem suas configurações e históricos em diferentes dispositivos.
