@@ -1,0 +1,6 @@
+{
+  "name": "ZenFlow Dashboard",
+  "description": "A high-quality focus and productivity tool powered by React and Gemini. Features a Pomodoro timer, AI-assisted focus list, music player, and a smart notepad to help you achieve deep work.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
